@@ -1,0 +1,333 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #e0f2fe;
+    color: #1f2937;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffffcc;
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #60a5fa;
+    color: white;
+}
+
+/* SECTIONS */
+.section {
+    min-height: 100vh;
+    padding: 100px 50px 80px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+    display: none;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+/* HOME */
+.home-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    min-height: 100vh;
+    padding-top: 0;
+    align-items: flex-start; /* keep text at top */
+}
+
+.home-left {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* pushes image down */
+    height: 100%;
+}
+
+.home-left img.profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #60a5fa;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease;
+}
+
+.home-left img.profile-img:hover {
+    transform: scale(1.05);
+}
+
+.home-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.home-right h1 {
+    font-size: 2.5rem;
+    color: #111827;
+}
+
+.home-right h2 {
+    font-size: 1.5rem;
+    color: #60a5fa;
+}
+
+.home-right p {
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #1f2937;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #60a5fa;
+    transform: scale(1.2);
+}
+
+/* Blinking cursor for typing effect */
+#typing::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+/* SECTION TITLES */
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #111827;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #60a5fa;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* CARDS */
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card a {
+    text-decoration: none;
+    color: #60a5fa;
+    font-weight: 500;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* TECH SKILLS */
+.tech-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tech-card {
+    background-color: #ffffff;
+    flex: 1 1 250px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+.tech-items {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-item {
+    background-color: #e0f2fe;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+/* TIMELINE */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-left: 4px solid #60a5fa;
+    border-radius: 5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* CONTACT FORM */
+.contact-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.contact-card form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-card form input,
+.contact-card form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-card form input:focus,
+.contact-card form textarea:focus {
+    border-color: #60a5fa;
+    outline: none;
+    box-shadow: 0 0 5px rgba(96,165,250,0.3);
+}
+
+.contact-card form button {
+    background-color: #60a5fa;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-card form button:hover {
+    background-color: #3b82f6;
+}
+
+/* ONLINE JUDGE */
+#oj ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#oj li {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#oj li a {
+    text-decoration: none;
+    color: #60a5fa;
+    font-weight: 500;
+}
+
+#oj li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .home-left img {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tech-skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
